@@ -16,6 +16,8 @@ public class ScreenReaderGUI extends JPanel implements ActionListener {
 
     public ScreenReaderGUI(){
 
+
+
         screenReaderTitle = new JLabel("Screen Reader");
         screenReaderTitle.setFont(new Font("Consolas", Font.PLAIN,50));
         screenReaderTitle.setBounds(475,150,500,100);
@@ -88,6 +90,9 @@ public class ScreenReaderGUI extends JPanel implements ActionListener {
                 break;
             case "Yes":
                 areYouSure.setVisible(false);
+                ScreenReader screenReader = new ScreenReader();
+                screenReader.partOfScreen();
+                screenReader.textFromImage();
                 break;
             case "No":
                 areYouSure.setVisible(false);
