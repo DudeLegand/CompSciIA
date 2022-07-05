@@ -15,7 +15,7 @@ import javax.imageio.ImageIO;
 public class ScreenReader {
 
     String format = "png";
-    String fileName = "PartOfScreen." + format;
+    String fileName = "N:\\Computers\\Yr 12\\!!!IAFiles\\PartOfScreen." + format;
 
     public ScreenReader() {
 
@@ -32,6 +32,7 @@ public class ScreenReader {
 
             ImageIO.write(screenFullImage, format, new File(fileName));
 
+
             System.out.println("A partial screenshot saved!");
         } catch (AWTException | IOException ex) {
             System.out.println("Error");
@@ -45,7 +46,7 @@ public class ScreenReader {
             //System.setProperty("jna.library.path", "C:\\Max's Folder\\BGS\\Java stuff\\Tesseract\\Tess4J");
 
             //tesseract.setDatapath("C:\\Max's Folder\\BGS\\Java stuff\\Tesseract\\Tess4J");
-            tesseract.setDatapath(("N:\\Computers\\Yr 12\\!Tess4J-3.4.8-src\\Tess4J"));
+            //tesseract.setDatapath(("N:\\Computers\\Yr 12\\!Tess4J-3.4.8-src\\Tess4J"));
 
             //Goes down the path to an image file and performs the OCR function which tried to read any text from the image
             String textFromImage = tesseract.doOCR(new File("N:\\Computers\\Yr 12\\IA\\PartOfScreen.png"));
