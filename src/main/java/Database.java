@@ -13,7 +13,7 @@ public class Database {
         recordCount = getRecordCount();
     }
 
-    public void appendRecord(String data) {
+    /*public void appendRecord(String data) {
         //Adds a record to the end of the database
         if (data.length() > lineLength) {
             System.out.println("Could not append data. String too long.");
@@ -22,7 +22,7 @@ public class Database {
             recordCount++;
         }
 
-    }
+    }*/
 
     public void deleteRecord(int rowNumber) {
         //TODO: Replace the specified line with a rare character that will likely not show up anywhere else in the code
