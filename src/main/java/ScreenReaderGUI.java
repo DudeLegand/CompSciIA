@@ -93,6 +93,7 @@ public class ScreenReaderGUI extends JPanel implements ActionListener {
                 ScreenReader screenReader = new ScreenReader();
                 screenReader.partOfScreen();
                 screenReader.textFromImage();
+                //screenReader.deleteFile();
                 break;
             case "No":
                 areYouSure.setVisible(false);

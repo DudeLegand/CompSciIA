@@ -1,5 +1,4 @@
-
-
+import net.sourceforge.tess4j.*;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 
@@ -47,18 +46,28 @@ public class ScreenReader {
         Tesseract tesseract = new Tesseract();
         try {
             //the path of your tess data folder inside the extracted file
-            //System.setProperty("jna.library.path", "C:\\Max's Folder\\BGS\\Java stuff\\Tesseract\\Tess4J");
+            System.setProperty("jna.library.path", "C:\\Max's Folder\\BGS\\Java stuff\\Tesseract\\Tess4J");
             //tesseract.setDatapath("C:\\Max's Folder\\BGS\\Java stuff\\Tesseract\\Tess4J");
             tesseract.setDatapath("N:\\Computers\\Yr 12\\Tess4J-3.4.8-src\\Tess4J");
 
             // path of the image file
-            String textFromImage = tesseract.doOCR(new File("N:\\Computers\\Yr 12\\!!!IAFiles\\PartOfScreen.png"));
+            String textFromImage = tesseract.doOCR(new File("N:\\Computers\\Yr 12\\IA\\PartOfScreen.png"));
             System.out.println(textFromImage);
         }
         catch (TesseractException e) {
-            e.printStackTrace();
+        e.printStackTrace();
             System.out.println("Error, improper input");
         }
 
     }
+
+    public void deleteFile(){
+        File imageToDelete = new File("PartOfScreen.png");
+        if (imageToDelete.delete()) {
+            System.out.println("Deleted the file: " + imageToDelete.getName());
+        } else {
+            System.out.println("Failed to delete the file.");
+        }
+    }
+
 }
