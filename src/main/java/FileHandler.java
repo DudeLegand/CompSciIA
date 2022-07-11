@@ -9,11 +9,7 @@ import java.io.RandomAccessFile;
 
 public class FileHandler {
 
-    public FileHandler(){
-
-    }
-
-    public static String randomRead(String fileName, int start, int len){
+    public static String fileRead(String fileName, int start, int len){
         try (RandomAccessFile rf = new RandomAccessFile("N:\\Computers\\Yr 12\\!Files!\\" + fileName + ".txt", "rws")){
             rf.seek(start);
             char letter = (char)rf.read();
@@ -26,7 +22,6 @@ public class FileHandler {
         }
         return "@";
     }
-
 
     public static long getRandomLength(String fileName) {
         //Returns length of a file
@@ -49,6 +44,21 @@ public class FileHandler {
 
         } catch (IOException e) {
             System.out.println("Oopsy poopsy");
+        }
+    }
+    public static void writeLineAt(String fileName, String data, int start) {
+        // overwrite a line from position "start" in the file
+        // doesn't check that the start position is actually
+        // the beginning of the file. This will not behave well
+        // unless every line is the same length
+
+
+        try (RandomAccessFile rf = new RandomAccessFile(fileName, "rws")) {
+            rf.seek(start);
+            rf.writeBytes(data);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -76,22 +86,6 @@ public class FileHandler {
         return null;
     }
 
-
-    public static void writeLineAt(String fileName, String data, int start) {
-        // overwrite a line from position "start" in the file
-        // doesn't check that the start position is actually
-        // the beginning of the file. This will not behave well
-        // unless every line is the same length
-
-
-        try (RandomAccessFile rf = new RandomAccessFile(fileName, "rws")) {
-            rf.seek(start);
-            rf.writeBytes(data);
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     public static int countLines(String fileName) {
         // return the number of lines in the file

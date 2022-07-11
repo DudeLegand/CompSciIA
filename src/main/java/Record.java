@@ -1,6 +1,6 @@
-public class Record extends Database{
+public class Record{
 
     public Record(String filename, int rowWidth) {
-        super(filename, rowWidth);
+
     }
 }

@@ -1,0 +1,142 @@
+                                         2S2500000000000000000000000000
+                                         2S25M0000000000000000000000000
+000011110001110001110001111111110000000002S3M00000000000000000000000000
+                                         2S6000000000000000000000000000
+                                         ASU-57000000000000000000000000
+                                         ASU-85000000000000000000000000
+                                         BA-110000000000000000000000000
+                                         BM-13N000000000000000000000000
+                                         BM-8-2400000000000000000000000
+                                         BMD-40000000000000000000000000
+                                         BMP-10000000000000000000000000
+                                         BMP-2
+                                         BMP-2M
+BMP-3
+BT-5
+BT-7
+BT-7 TD
+BT-7A (F-32)
+BT-7M
+BTR-152A
+BTR-ZD
+GAZ-AAA (4M)
+GAZ-AAA (DShK)
+GAZ-MM (72-K)
+IS-1
+IS-2
+IS-2 "Revenge"
+IS-2 (1944)
+IS-2 No.321
+IS-3
+IS-4M
+IS-6
+IS-7
+ISU-122
+ISU-122S
+ISU-152
+IT-1
+Khrizantema-S
+KV-1 (L-11)
+KV-1 (ZiS-5)
+KV-122
+KV-1E
+KV-1S
+KV-2 (1939)
+KV-2 (1940)
+KV-2 (ZiS-6)
+KV-220
+KV-85
+M3 Medium
+M4A2
+MK-II "Matilda"
+MK-IX "Valentine"
+Object 120
+Object 268
+Object 279
+Object 685
+Object 906
+Phòng không T-34
+PT-76-57
+PT-76B
+RBT-5
+Shturm-S
+SMK
+SU-100
+SU-100P
+SU-100Y
+SU-122
+SU-122-54
+SU-122P
+SU-152
+SU-5-1
+SU-57
+SU-57B
+SU-76D
+SU-76M
+SU-76M (5th Gv.Kav.Corps)
+SU-85
+SU-85A
+SU-85M
+T-10A
+T-10M
+T-126
+T-26
+T-26 (1st Gv.T.Br.)
+T-26-4
+T-26E
+T-28
+T-28 (1938)
+T-28E
+T-34 (1940)
+T-34 (1941)
+T-34 (1942)
+T-34 (1st Gv.T.Br.)
+T-34 (Prototype)
+T-34-100
+T-34-57
+T-34-57 (1943)
+T-34-85
+T-34-85 (D-5T)
+T-34-85E
+T-34E
+T-34E STZ
+T-35
+T-44
+T-44-100
+T-44-122
+T-50
+T-54 (1947)
+T-54 (1949)
+T-54 (1951)
+T-55A
+T-55AM-1
+T-55AMD-1
+T-60
+T-62
+T-62M-1
+T-64A (1971)
+T-64B
+T-70
+T-72A
+T-72AV (TURMS-T)
+T-72B
+T-72B (1989)
+T-72B3
+T-72M2 Moderna
+T-80
+T-80B
+T-80BVM
+T-80U
+T-90A
+T-III
+T-V
+Type 62
+YaG-10 (29-K)
+ZiS-12 (94-KM)
+ZiS-30
+ZiS-43
+ZSU-23-4
+ZSU-37
+ZSU-37-2
+ZSU-57-2
+ZUT-37

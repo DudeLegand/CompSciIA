@@ -7,10 +7,13 @@ public class Database {
     private int rowWidth;
     private int recordCount;
 
-    public Database(String filename, int rowWidth) {
+    private int[] fields;
+
+    public Database(String filename, int rowWidth, int[] fields) {
         this.filename = filename;
         this.rowWidth = rowWidth;
         recordCount = getRecordCount();
+        this.fields = fields;
     }
 
     /*public void appendRecord(String data) {
@@ -44,6 +47,7 @@ public class Database {
         return FileHandler.readLineAt(filename, (rowWidth+2) * (rowNumber));
     }
 
+
     public int getRecordCount() {
         //Goes through the files noting the number of lines via increments
         int count = 0;
@@ -71,4 +75,17 @@ public class Database {
         return false;
     }
 
+    public void replaceRecord(int rowNumber, int columnNumber,String data){
+        //Replaces a certain field
+        int temp = 0;
+        for (int i = 0; i < columnNumber; i++) {
+            temp += fields[i];
+        }
+        FileHandler.writeLineAt(filename, pad(data,fields[columnNumber]), rowNumber * (rowWidth + 3) + temp);
+    }
+
+    public static String pad(String data, int lengthToPad){
+        return String.format("%1$-" + lengthToPad + "s", data);
+    }
+//Hit - Crit - ZoneCapture - Assist - Kills - AirKills - Deaths - rp - sl
 }
