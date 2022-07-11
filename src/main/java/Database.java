@@ -88,4 +88,25 @@ public class Database {
         return String.format("%1$-" + lengthToPad + "s", data);
     }
 //Hit - Crit - ZoneCapture - Assist - Kills - AirKills - Deaths - rp - sl
+
+    public String[] recordToArray(int rowNumber){
+        //Converts a record string from a database file into array elements
+        String[] fieldsWithData = new String[fields.length];
+        String record = getRecord(rowNumber);
+        int beginIndex = 0;
+        int endIndex;
+
+        for (int i = 0; i < fields.length; i++) {
+            endIndex = beginIndex + fields[i];
+            fieldsWithData[i] = record.substring(beginIndex, endIndex);
+            beginIndex = endIndex;
+        }
+
+        return fieldsWithData;
+    }
+
+
+
 }
+
+

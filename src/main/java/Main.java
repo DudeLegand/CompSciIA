@@ -7,6 +7,7 @@ public class Main {
         //database.replaceRecord(1, 8, String.valueOf(41));
         //database.replaceRecord(2, 8, String.valueOf(42));
         MainFrame mf = new MainFrame();
-        mf.setVisible(true);    }
+        mf.setVisible(true);
+    }
 
     }

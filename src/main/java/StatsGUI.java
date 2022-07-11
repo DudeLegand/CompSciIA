@@ -13,17 +13,21 @@ public class StatsGUI extends JPanel implements ActionListener {
     JScrollPane scrollPaneForTable;
 
     public StatsGUI(int[] fields){
-
+        Database database = new Database("USRGroundVehicles.txt", 70, new int[]{4, 4, 3, 3, 3, 3, 3, 9, 9, 30});
         this.fields = fields;
         String[] columns = new String[] {
                 "Hits", "Crits", "Zone Captures", "Assists", "Kills", "Air Kills", "Deaths", "RP", "SL", "Name"
         };
+        String[] dataFromRow;
+        String[][] dataForTable = new String[fields.length][database.getRecordCount()];
 
-        Object[][] data = new Object[][] {
-                {1, 40, 40, 40, 40, 1, 40, 40, 40, 40},
-                {2, 70, 70, 70, 70, 2, 70, 70, 70, 70},
-                {3, 60, 60, 60, 60, 3, 60, 60, 60, 60},
-        };
+        for (int i = 0; i < database.getRecordCount(); i++) {
+            for (int j = 0; j < fields.length - 1; j++) {
+                dataFromRow = database.recordToArray(i);
+                dataForTable[i][j] = dataFromRow[j];
+            }
+        }
+
 
         statsTitle = new JLabel("Statistics");
         statsTitle.setFont(new Font("Consolas", Font.PLAIN,50));
@@ -35,7 +39,7 @@ public class StatsGUI extends JPanel implements ActionListener {
         back.setBounds(125,500,300,100);
         back.addActionListener(this);
 
-        tableOfStats = new JTable(data,columns);
+        tableOfStats = new JTable(dataForTable,columns);
         tableOfStats.setBounds(125,300,500,200);
 
         scrollPaneForTable = new JScrollPane(tableOfStats);
