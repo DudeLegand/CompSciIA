@@ -16,16 +16,15 @@ public class Database {
         this.fields = fields;
     }
 
-    /*public void appendRecord(String data) {
+    public void appendRecord(String data) {
         //Adds a record to the end of the database
-        if (data.length() > lineLength) {
-            System.out.println("Could not append data. String too long.");
+        if (data.length() > rowWidth) {
+            System.out.println("Could not append data. String too long." + data.length() + " is longer than " + rowWidth);
         } else {
-            FileHandler.fileWrite(filename,-1, String.format("%1$-" + lineLength + "s", data)+ "\r\n");
+            FileHandler.randomWrite(filename,-1, String.format("%1$-" + rowWidth + "s", data)+ "\r\n");
             recordCount++;
         }
-
-    }*/
+    }
 
     public void deleteRecord(int rowNumber) {
         //TODO: Replace the specified line with a rare character that will likely not show up anywhere else in the code
@@ -75,13 +74,13 @@ public class Database {
         return false;
     }
 
-    public void replaceRecord(int rowNumber, int columnNumber,String data){
+    public void replaceField(int rowNumber, int columnNumber, String data){
         //Replaces a certain field
         int temp = 0;
         for (int i = 0; i < columnNumber; i++) {
             temp += fields[i];
         }
-        FileHandler.writeLineAt(filename, pad(data,fields[columnNumber]), rowNumber * (rowWidth + 3) + temp);
+        FileHandler.writeLineAt(filename, pad(data,fields[columnNumber]), rowNumber * (rowWidth + 2) + temp);
     }
 
     public static String pad(String data, int lengthToPad){

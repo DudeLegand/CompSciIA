@@ -10,8 +10,8 @@ public class MainFrame extends JFrame{
         allPanels = new JPanel[4];
         allPanels[0] = new MainMenuGUI();
         allPanels[1] = new ScreenReaderGUI();
-        allPanels[2] = new CalculatorGUI();
-        allPanels[3] = new StatsGUI(new int[]{4, 4, 3, 3, 3, 3, 3, 9, 9, 30});
+        allPanels[2] = new CalculatorGUI(new int[]{4, 4, 3, 3, 3, 3, 3, 4,9, 9, 30});
+        allPanels[3] = new StatsGUI(new int[]{4, 4, 3, 3, 3, 3, 3, 4, 9, 9, 30});
         for (JPanel panel :
                 allPanels) {
             this.add(panel);

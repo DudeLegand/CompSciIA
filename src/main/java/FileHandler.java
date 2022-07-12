@@ -9,18 +9,33 @@ import java.io.RandomAccessFile;
 
 public class FileHandler {
 
-    public static String fileRead(String fileName, int start, int len){
-        try (RandomAccessFile rf = new RandomAccessFile("N:\\Computers\\Yr 12\\!Files!\\" + fileName + ".txt", "rws")){
+    public static String fileRead(String fileName, int start, int length) {
+        //gets String from point
+        try (RandomAccessFile rf = new RandomAccessFile(fileName, "rws")) {
             rf.seek(start);
-            char letter = (char)rf.read();
-            String lettter = String.valueOf(letter);
-            //System.out.println(letter);
-            return lettter;
+            if (length == 0) {
+                //Whole line
+                String read = rf.readLine();
+                return read;
+            } else {
+                //Specific length, using a string builder to omit carriage returns
+                StringBuilder output = new StringBuilder();
+
+                for (int i = 0; i < length; i++) {
+                    char nextC = (char) rf.read();
+
+                    if (Character.toString(nextC).equals("\r")) {
+                        i++;
+                    } else {
+                        output.append(nextC);
+                    }
+                }
+                return output.toString();
+            }
+        } catch (IOException e) {
+            System.out.println("Random read error!");
+            return null;
         }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-        return "@";
     }
 
     public static long getRandomLength(String fileName) {
@@ -34,13 +49,15 @@ public class FileHandler {
         }
     }
 
+    //TODO - FIX
     public static void randomWrite(String fileName, int start, String text) {
         //Writes into text file
         try (RandomAccessFile rf = new RandomAccessFile(fileName, "rws")) {
-            rf.seek(start);
+            rf.seek(start == -1 ? rf.length() : start);
             for (int i = 0; i < text.length(); i++) {
                 rf.write(text.charAt(i));
             }
+
 
         } catch (IOException e) {
             System.out.println("Oopsy poopsy");

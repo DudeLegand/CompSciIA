@@ -10,40 +10,47 @@ public class StatsGUI extends JPanel implements ActionListener {
     JButton back;
     JTable tableOfStats;
 
+    JButton sortButton;
+
+    JComboBox sortByWhat;
+
     JScrollPane scrollPaneForTable;
 
     public StatsGUI(int[] fields){
-        Database database = new Database("USRGroundVehicles.txt", 70, new int[]{4, 4, 3, 3, 3, 3, 3, 9, 9, 30});
+        Database database = new Database("USRGroundVehicles.txt", 75, new int[]{4, 4, 3, 3, 3, 3, 3, 4, 9, 9, 30});
         this.fields = fields;
         String[] columns = new String[] {
-                "Hits", "Crits", "Zone Captures", "Assists", "Kills", "Air Kills", "Deaths", "RP", "SL", "Name"
+                "Hits", "Crits", "Zone Captures", "Assists", "Kills", "Air Kills", "Deaths", "Games Played", "RP", "SL", "Name"
         };
-        String[] dataFromRow;
-        String[][] dataForTable = new String[fields.length][database.getRecordCount()];
+        String[][] dataForTable = new String[database.getRecordCount()][fields.length];
 
         for (int i = 0; i < database.getRecordCount(); i++) {
-            for (int j = 0; j < fields.length - 1; j++) {
-                dataFromRow = database.recordToArray(i);
-                dataForTable[i][j] = dataFromRow[j];
-            }
+            dataForTable[i] = database.recordToArray(i);
         }
 
 
         statsTitle = new JLabel("Statistics");
         statsTitle.setFont(new Font("Consolas", Font.PLAIN,50));
-        statsTitle.setBounds(475,150,500,100);
+        statsTitle.setBounds(475,50,500,100);
         //mainMenuTitle.setBorder(BorderFactory.createEmptyBorder(100,100,100,100));
         setLayout(null);
 
         back = new JButton("Back");
-        back.setBounds(125,500,300,100);
+        back.setBounds(125,600,300,100);
         back.addActionListener(this);
 
         tableOfStats = new JTable(dataForTable,columns);
-        tableOfStats.setBounds(125,300,500,200);
+        tableOfStats.setBounds(125,150,1100,400);
+        tableOfStats.setAutoCreateRowSorter(true);
 
         scrollPaneForTable = new JScrollPane(tableOfStats);
-        scrollPaneForTable.setBounds(125,300,1000,200);
+        scrollPaneForTable.setBounds(125,150,1100,400);
+
+        sortButton = new JButton("Sort");
+        sortButton.setBounds(525,600,300,100);
+
+        sortByWhat = new JComboBox(columns);
+        sortByWhat.setBounds(925,625,300,50);
 
         this.setBounds(0,0,1500,1500);
 
@@ -51,6 +58,12 @@ public class StatsGUI extends JPanel implements ActionListener {
         this.add(statsTitle);
         this.add(back);
         this.add(scrollPaneForTable);
+        this.add(sortButton);
+        this.add(sortByWhat);
+
+    }
+
+    public void sort(){
 
     }
 
@@ -62,6 +75,9 @@ public class StatsGUI extends JPanel implements ActionListener {
                 MainFrame.navigate(3,0);
                 break;
 
+            case "Sort":
+                sort();
+                break;
         }
 
     }

@@ -20,7 +20,7 @@ public class MainMenuGUI extends JPanel implements ActionListener {
 
         mainMenuTitle = new JLabel("Grind Calculator");
         mainMenuTitle.setFont(new Font("Consolas", Font.PLAIN,50));
-        mainMenuTitle.setBounds(475,150,500,100);
+        mainMenuTitle.setBounds(475,50,500,100);
         //mainMenuTitle.setBorder(BorderFactory.createEmptyBorder(100,100,100,100));
         setLayout(null);
 
@@ -29,15 +29,15 @@ public class MainMenuGUI extends JPanel implements ActionListener {
 
 
         toScreenReader = new JButton("Screen Reader");
-        toScreenReader.setBounds(125,500,300,100);
+        toScreenReader.setBounds(125,600,300,100);
         toScreenReader.addActionListener(this);
 
         toCalculator = new JButton("Calculator");
-        toCalculator.setBounds(525,500,300,100);
+        toCalculator.setBounds(525,600,300,100);
         toCalculator.addActionListener(this);
 
         toStats = new JButton("Stats");
-        toStats.setBounds(925,500,300,100);
+        toStats.setBounds(925,600,300,100);
         toStats.addActionListener(this);
 
         this.setBounds(0,0,1500,1500);

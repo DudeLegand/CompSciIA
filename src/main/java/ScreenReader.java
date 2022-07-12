@@ -46,10 +46,10 @@ public class ScreenReader {
         Tesseract tesseract = new Tesseract();
         try {
             //the path of your tess data folder inside the extracted file
-            //System.setProperty("jna.library.path", "C:\\Max's Folder\\BGS\\Java stuff\\Tesseract\\Tess4J");
-            System.setProperty("jna.library.path", "N:\\Computers\\Yr 12\\!Tess4J-3.4.8-src\\5.2.0\\tesseract-ocr-tesseract-8ed8a3f");
-            //tesseract.setDatapath("C:\\Max's Folder\\BGS\\Java stuff\\Tesseract\\Tess4J");
-            tesseract.setDatapath("N:\\Computers\\Yr 12\\!Tess4J-3.4.8-src\\5.2.0\\tesseract-ocr-tesseract-8ed8a3f");
+            System.setProperty("jna.library.path", "C:\\Users\\taras\\OneDrive\\Desktop\\Max's Temp Folder\\Comp Sci Code\\5.2.0\\tesseract-ocr-tesseract-8ed8a3f");
+            //System.setProperty("jna.library.path", "N:\\Computers\\Yr 12\\!Tess4J-3.4.8-src\\5.2.0\\tesseract-ocr-tesseract-8ed8a3f");
+            tesseract.setDatapath("C:\\Users\\taras\\OneDrive\\Desktop\\Max's Temp Folder\\Comp Sci Code\\5.2.0\\tesseract-ocr-tesseract-8ed8a3f");
+            //tesseract.setDatapath("N:\\Computers\\Yr 12\\!Tess4J-3.4.8-src\\5.2.0\\tesseract-ocr-tesseract-8ed8a3f");
 
             // path of the image file
             String textFromImage = tesseract.doOCR(new File("N:\\Computers\\Yr 12\\IA\\PartOfScreen.png"));

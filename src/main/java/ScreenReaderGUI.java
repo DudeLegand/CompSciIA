@@ -20,16 +20,16 @@ public class ScreenReaderGUI extends JPanel implements ActionListener {
 
         screenReaderTitle = new JLabel("Screen Reader");
         screenReaderTitle.setFont(new Font("Consolas", Font.PLAIN,50));
-        screenReaderTitle.setBounds(475,150,500,100);
+        screenReaderTitle.setBounds(475,50,500,100);
         //mainMenuTitle.setBorder(BorderFactory.createEmptyBorder(100,100,100,100));
         setLayout(null);
 
         back = new JButton("Back");
-        back.setBounds(125,500,300,100);
+        back.setBounds(125,600,300,100);
         back.addActionListener(this);
 
         turnSROnOrOff = new JToggleButton("Off");
-        turnSROnOrOff.setBounds(525,500,300,100);
+        turnSROnOrOff.setBounds(525,600,300,100);
         turnSROnOrOff.addActionListener(this);
 
         areYouSure = new JDialog();
