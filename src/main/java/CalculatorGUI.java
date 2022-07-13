@@ -42,6 +42,17 @@ public class CalculatorGUI extends JPanel implements ActionListener {
         whatVehicle = new JComboBox(vehicles);
         whatVehicle.setBounds(125,300,300,50);
 
+        calculateAverage = new JRadioButton("Average");
+        calculateAverage.setBounds(525,275,300,50);
+        calculateAverage.addActionListener(this);
+
+        calculateEstimate = new JRadioButton("Estimate");
+        calculateEstimate.setBounds(525,325,300,50);
+        calculateAverage.addActionListener(this);
+
+        averageOrEstimate = new ButtonGroup();
+        averageOrEstimate.add(calculateAverage);
+        averageOrEstimate.add(calculateEstimate);
 
 
         this.setBounds(0,0,1500,1500);
@@ -51,6 +62,9 @@ public class CalculatorGUI extends JPanel implements ActionListener {
         this.add(back);
         this.add(calculate);
         this.add(whatVehicle);
+        this.add(calculateAverage);
+        this.add(calculateEstimate);
+
 
     }
 
