@@ -10,6 +10,9 @@ public class CalculatorGUI extends JPanel implements ActionListener {
     JButton back;
     JButton calculate;
     JComboBox whatVehicle;
+    JRadioButton calculateAverage;
+    JRadioButton calculateEstimate;
+    ButtonGroup averageOrEstimate;
     public CalculatorGUI(int[] fields){
 
         calculatorTitle = new JLabel("Calculator");
@@ -38,6 +41,8 @@ public class CalculatorGUI extends JPanel implements ActionListener {
 
         whatVehicle = new JComboBox(vehicles);
         whatVehicle.setBounds(125,300,300,50);
+
+
 
         this.setBounds(0,0,1500,1500);
 

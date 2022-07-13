@@ -3,7 +3,6 @@ public class Main {
         //TODO - Do this for other files
         //Database database = new Database("USRGroundVehicles.txt", 75, new int[]{4, 4, 3, 3, 3, 3, 3, 4, 9, 9, 30});
 
-
         //for (int i = 0; i < 142; i++) {
         //    for (int j = 0; j < 10; j++) {
         //        database.replaceField(i,j,"0");
